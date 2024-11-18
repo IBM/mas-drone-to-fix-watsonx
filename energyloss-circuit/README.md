@@ -1,5 +1,5 @@
 # Create solar panel IoT circuit & send data to IBM Maximo Monitor
-## From Drone to Fix - Solar Farm Inspection - Energy Loss Story (Circuit)
+## [From Drone to Fix - Solar Farm Inspection - Energy Loss Story (Circuit)]
 
 **Last Updated:** 18 November 2024 **Authors:** <a href="https://www.linkedin.com/in/jamesppetrie/" target="_blank">James Petrie</a> & <a href="https://www.linkedin.com/in/christophe-lucas-a5abab28/" target="_blank">Christophe Lucas</a><br>
 **Disclaimer:** This code is delivered as-is and is NOT formal IBM documentation in any way.<br>
