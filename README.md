@@ -66,7 +66,7 @@ Two videos that show the whole demo flow can be download here: (1) [DroneToFix -
 **Links to Recipe**
 Follow 1 of these 2 recipes to be able to reproduce this `Energy Loss` story end-to-end:
 1. [Create solar panel IoT circuit & send data to IBM Maximo Monitor](/energyloss-circuit/README.md): In this recipe, you will learn how to physically build the IoT circuit and use it to send power, current and voltage readings to the Monitor IoT tool.
-2. [Send csv data to IBM Maximo Monitor with Watson IoT Platform SDK & Cloud Pak For Data](/energyloss-simulated/README.md): In this recipe, you will learn how to use a csv file containing 5,720 demo data readings to (a) send data real-time, (b) bulk-send future & past data to Monitor.
+2. [Send csv data to IBM Maximo Monitor with Watson IoT Platform SDK & Cloud Pak For Data](/energyloss-simulated/README.md): In this recipe which does not require any hardware, you will learn how to use a csv file containing 5,720 demo data readings to (a) send data real-time, (b) bulk-send future & past data to Monitor.
 
 At the end of both recipes, you will create an anomaly score for `power`, anomaly-based alerts and a dashboard to ultimately create a Service Request for a visual drone inspection whenever a power drop or anomaly is observed.
 ![image](/images/DroneToFix-002.jpg)
