@@ -1,7 +1,7 @@
 # Create solar panel IoT circuit & send data to IBM Maximo Monitor
 ## [From Drone to Fix - Solar Farm Inspection - Energy Loss Story (Circuit)]
 
-**Last Updated:** 18 November 2024 **Authors:** <a href="https://www.linkedin.com/in/jamesppetrie/" target="_blank">James Petrie</a> & <a href="https://www.linkedin.com/in/christophe-lucas-a5abab28/" target="_blank">Christophe Lucas</a><br>
+**Last Updated:** 19 November 2024 **Authors:** <a href="https://www.linkedin.com/in/jamesppetrie/" target="_blank">James Petrie</a> & <a href="https://www.linkedin.com/in/christophe-lucas-a5abab28/" target="_blank">Christophe Lucas</a><br>
 **Disclaimer:** This code is delivered as-is and is NOT formal IBM documentation in any way.<br>
 
 ## Table of Contents
@@ -14,6 +14,7 @@
     - [Create device in Monitor IoT Tool](#create-device-in-iot-platform)
 - [Set up hardware](#setting-up-hardware)
     - [Create circuit](#create-circuit)
+    - [Create config](#credentials)
     - [Create code](#implement-code)
 - [Play the 'Energy Loss' story end-to-end](#play)
     - [Create Anomaly Function & Dashboard](#anomaly)
@@ -94,7 +95,6 @@ This picture highlights the steps you just completed:
 # Set up hardware
 
 <a id='Create circuit'></a>
-
 ## Create circuit
 1.	Establish the following connections on the board:
     -	Solar Panel Positive -> Sensor Power In
@@ -109,8 +109,23 @@ This picture highlights the steps you just completed:
 
 ![image](/images/Circuit-001.jpg)
 
-<a id='Implement code'></a>
 
+<a id='credentials'> </a>
+## Create config - Get your MAS Monitor IoT Tool details & certificate
+To send data to Monitor's IoT Tool using the Notebook, you will use the <a href="https://ibm-watson-iot.github.io/iot-python/application/mqtt/events/#publishing-device-events" target="_blank">Publishing Device Events</a> command of Monitor's <a href="https://ibm-watson-iot.github.io/iot-python/" target="_blank">IBM Watson IoT Platform Python SDK</a>. To connect, you will need a `myConfig` <a href="https://ibm-watson-iot.github.io/iot-python/device/config/" target="_blank">Configuration</a> cell, including your IoT Tool's `"orgId"` & `"domain"` values, as well as its `"caFile"` certifcate. 
+
+Here is how to get `"orgId"` & `"domain"`:
+
+1. `"orgId"`: from Monitor's home menu, click `Open the IoT tool`. On the top-right of the screen just below your user name, copy the `ID` - that is the value of `"orgId"`.
+2. `"domain"`: observe the URL of your IoT Tool home screen. As per the image example, if your IoT Tool URL =
+`https://yourgeo.iot.yourgeomas.xyz.com/`, then your `"domain"` = `iot.yourgeomas.xyz.com`.
+
+To get the `"caFile"` certificate, use Firefox (not Chrome) and:
+1. In the Watson IoT Platform browser bar, click the Security icon just next to the URL. Click the `Connection Secure` line. Then click the `More information` line. That will open a pop-up window.
+2. On the popped-up window, click `View Certificate`. That will open a new tab on your browser.
+On the opened Certificate browser tab, click the `ISRG Root X1` tab. In the `Miscellaneous` section, click the `PEM (chain)` link. That will download a `certificate.pem` file which name should look like: `iot-yourgeomas-xyz-com.pem`. Save it locally.
+
+<a id='implement-code'></a>
 ## Implement code
 1.  Download and install Arduino IDE: `https://www.arduino.cc/en/software`
 2.  With the Arduino plugged into your device, select the COM port that shows `Arduino Uno` as per below
