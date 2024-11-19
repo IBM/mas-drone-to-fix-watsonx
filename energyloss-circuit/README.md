@@ -112,7 +112,7 @@ This picture highlights the steps you just completed:
 
 <a id='credentials'> </a>
 ## Create config - Get your MAS Monitor IoT Tool details & certificate
-To send data to Monitor's IoT Tool using the Notebook, you will use the <a href="https://ibm-watson-iot.github.io/iot-python/application/mqtt/events/#publishing-device-events" target="_blank">Publishing Device Events</a> command of Monitor's <a href="https://ibm-watson-iot.github.io/iot-python/" target="_blank">IBM Watson IoT Platform Python SDK</a>. To connect, you will need a `myConfig` <a href="https://ibm-watson-iot.github.io/iot-python/device/config/" target="_blank">Configuration</a> cell, including your IoT Tool's `"orgId"` & `"domain"` values, as well as its `"caFile"` certifcate. 
+To send data to Monitor's IoT Tool, you will use the <a href="https://ibm-watson-iot.github.io/iot-python/application/mqtt/events/#publishing-device-events" target="_blank">Publishing Device Events</a> command of Monitor's <a href="https://ibm-watson-iot.github.io/iot-python/" target="_blank">IBM Watson IoT Platform Python SDK</a>. To connect, you will need a `myConfig` <a href="https://ibm-watson-iot.github.io/iot-python/device/config/" target="_blank">Configuration</a> cell, including your IoT Tool's `"orgId"` & `"domain"` values, as well as its `"caFile"` certifcate. 
 
 Here is how to get `"orgId"` & `"domain"`:
 
