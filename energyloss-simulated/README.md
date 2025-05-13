@@ -83,6 +83,8 @@ Let's now install `Jupyter Lab` in the `venv`:
 4. Drag and drop the [solar-panel-readings.csv](./files/solar-panel-readings.csv) and that `certificate.pem` e.g. `iot-yourgeomas-xyz-com-chain.pem` you just downloaded from your local folder to the Jupyter Lab window on your browser.
 5. Similarly, drag and drop the [cl-energy-loss-simulated-local.ipynb](./files/cl-energy-loss-simulated-local.ipynb) you just downloaded. Open it - you are ready to go !
 
+![image](/images/Simulated-004.jpg)
+
 <a id='cp4d'> </a>
 ### OPTION B - using Cloud Pak for Data
 Download this Notebook locally [cl-energy-loss-simulated-cp4d.ipynb](./files/cl-energy-loss-simulated-cp4d.ipynb).
