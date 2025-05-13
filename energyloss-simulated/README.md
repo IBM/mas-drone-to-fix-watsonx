@@ -22,7 +22,7 @@ The objective of this recipe is to enable you to reproduce the `Energy Loss` sto
 
 In this recipe, you will:
 1. Get your required MAS Monitor IoT Tool details & certificate, download the csv file containing the simulated readings & the Notebook. 
-2. Setup a Cloud Pak For Data (CP4) Project and upload the certificate, the csv file and the Notebook to it.
+2. Setup a local Jupyter Lab or a Cloud Pak For Data (CP4D) environment and upload the certificate, the csv file and the Notebook to it.
 3. Understand & run the Notebook in CP4D to:
    - visualize the csv solar panel data.
    - send the 5,720 rows of simulated data to Monitor as (a) either real-time or (b) past & future data.
