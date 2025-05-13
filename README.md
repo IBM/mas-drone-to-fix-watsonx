@@ -1,7 +1,7 @@
 # From Drone to Fix - Solar Farm Inspection using IBM Maximo & Watsonx
-**Last Updated:** 18 November 2024 **Authors:**  <a href="https://www.linkedin.com/in/christophe-lucas-a5abab28/" target="_blank">Christophe Lucas</a> & <a href="https://www.linkedin.com/in/jamesppetrie/" target="_blank">James Petrie </a><br>
+**Last Updated:** 12 May 2025 **Authors:**  <a href="https://www.linkedin.com/in/christophe-lucas-a5abab28/" target="_blank">Christophe Lucas</a> & <a href="https://www.linkedin.com/in/jamesppetrie/" target="_blank">James Petrie </a><br>
 **Disclaimer:** This code is delivered as-is and is NOT formal IBM documentation in any way.<br><br>
-**IMPORTANT NOTE:** This repository is still work-in-progress. As of 18 November 2024, this main page & the `Energy Loss` story recipes are complete. The `Visual Inspection` & `GenAI + Q&A` recipes are still to be written (end 2024, early 2025). 
+**IMPORTANT NOTE:** This repository is still work-in-progress. This main page & the `Energy Loss` story recipes are complete. The `Visual Inspection` & `GenAI + Q&A` recipes are still to be written. 
 
 # Table of Contents
 - [**Introduction**](#intro)
@@ -66,7 +66,7 @@ Two videos that show the whole demo flow can be download here: (1) [DroneToFix -
 **Links to Recipe**
 Follow 1 of these 2 recipes to be able to reproduce this `Energy Loss` story end-to-end:
 1. [Create solar panel IoT circuit & send data to IBM Maximo Monitor](/energyloss-circuit/README.md): In this recipe, you will learn how to physically build the IoT circuit and use it to send power, current and voltage readings to the Monitor IoT tool.
-2. [Send csv data to IBM Maximo Monitor with Watson IoT Platform SDK & Cloud Pak For Data](/energyloss-simulated/README.md): In this recipe which does not require any hardware, you will learn how to use a csv file containing 5,720 demo data readings to (a) send data real-time, (b) bulk-send future & past data to Monitor.
+2. [Send csv data to IBM Maximo Monitor with Watson IoT Platform SDK](/energyloss-simulated/README.md): In this recipe which does not require any hardware, you will learn how to use a csv file containing 5,720 demo data readings to (a) send data real-time, (b) bulk-send future & past data to Monitor.
 
 At the end of both recipes, you will create an anomaly score for `power`, anomaly-based alerts and a dashboard to ultimately create a Service Request for a visual drone inspection whenever a power drop or anomaly is observed.
 ![image](/images/DroneToFix-002.jpg)
