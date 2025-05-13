@@ -1,16 +1,17 @@
-# Send csv data to IBM Maximo Monitor with IoT Platform SDK & Cloud Pak For Data 
+# Send csv data to IBM Maximo Monitor with IoT Platform SDK
 ## [From Drone to Fix - Solar Farm Inspection - Energy Loss Story (Simulated)]
 
-**Last Updated:** 21 January 2025 **Authors:** <a href="https://www.linkedin.com/in/christophe-lucas-a5abab28/" target="_blank">Christophe Lucas</a> & <a href="https://www.linkedin.com/in/jamesppetrie/" target="_blank">James Petrie</a><br>
+**Last Updated:** 12 May 2025 **Authors:** <a href="https://www.linkedin.com/in/christophe-lucas-a5abab28/" target="_blank">Christophe Lucas</a> & <a href="https://www.linkedin.com/in/jamesppetrie/" target="_blank">James Petrie</a><br>
 **Disclaimer:** This code is delivered as-is and is NOT formal IBM documentation in any way.
-
 
 # Table of Contents
 - [Introduction](#intro)
 - [Get ready](#ready)
     - [Get your MAS Monitor IoT Tool details & certificate](#credentials)
-    - [Download Notebook & solar-panel-readings.csv](#download)
-    - [Create Project in Cloud Pak For Data & import certificate, Notebook and csv](#cp4d)
+    - [Download csv, create Project, import certificate & Notebook](#import)
+        - [Download solar-panel-readings.csv](#download)
+        - [OPTION A - using Cloud Pak for Data](#cp4d)      
+        - [OPTION B - using Local Jupyter Env](#local)      
 - [Understand & run the Notebook](#notebook)
     - [Notebook Explained](#notebookexplained)
     - [Notebook - GO !](#notebookgo) 
@@ -49,32 +50,57 @@ Here is how to get `"orgId"` & `"domain"`:
 To get the `"caFile"` certificate, use Firefox (not Chrome) and:
 1. In the Watson IoT Platform browser bar, click the Security icon just next to the URL. Click the `Connection Secure` line. Then click the `More information` line. That will open a pop-up window.
 2. On the popped-up window, click `View Certificate`. That will open a new tab on your browser.
-On the opened Certificate browser tab, click the `ISRG Root X1` tab. In the `Miscellaneous` section, click the `PEM (chain)` link. That will download a `certificate.pem` file which name should look like: `iot-yourgeomas-xyz-com.pem`. Save it locally. 
+On the opened Certificate browser tab, click the `ISRG Root X1` tab. In the `Miscellaneous` section, click the `PEM (chain)` link. That will download a `certificate.pem` file which name should look like: `iot-yourgeomas-xyz-com-chain.pem`. Save it locally. 
 
 ![image](/images/Simulated-001.jpg)
 
+
+<a id='import'> </a>
+## Create Project & import certificate, Notebook and csv
+
 <a id='download'> </a>
-## Download Notebook & solar-panel-readings.csv
-Download:
-1. the [solar-panel-readings.csv](./files/solar-panel-readings.csv) file containing the 5,720 rows of simulated data , save it locally.
-2. the [cl-energy-loss-simulated.ipynb](./files/cl-energy-loss-simulated.ipynb) Notebook, save it locally.
+### Download solar-panel-readings.csv
+Download the [solar-panel-readings.csv](./files/solar-panel-readings.csv) file containing the 5,720 rows of simulated data , save it locally.
+
+<a id='local'> </a>
+### OPTION A - using Local Jupyter Env
+Download this Notebook locally [cl-energy-loss-simulated-local.ipynb](./files/cl-energy-loss-simulated-local.ipynb). 
+
+In order to run this recipe, all we need is a Python `virtual environment` within which we'll install `Jupyter Lab` to run the Notebook.
+The steps below were executed with Python 3.12.7 on a Mac but similar steps can be used on a PC (refer to documentation links below).
+
+Open your Mac `Terminal` and follow these steps to install and activate the Python `venv`:
+1.  Run `mkdir cl-energy-loss-simulated` to create a `cl-energy-loss-simulated` folder (refer to Python documentation <a href="https://docs.python.org/3/library/venv.html" target="_blank">venv — Creation of virtual environments </a> for non-Mac user and/or more info)
+2. Run `cd cl-energy-loss-simulated` to move to your folder
+3. Run `python3 -m venv venv` to create a virtual environment called `venv`. Once done, check that you have a `venv` folder under and that it contains the subfolders `bin`, `include`, `lib` and a file `pyvenv.cfg`.
+4. Run `source venv/bin/activate` to activate the venv. Note that once this command is done, a `(venv)` should appear on the left of your Terminal command line e.g. `(venv) christophelucasibm@MacBook cl-energy-loss-simulated-test %`. That means your venv is activated successfully.
+5. Run `pip list` and note that only e.g. `pip 24.2` is returned i.e. your venv has no other python package installed yet.
+
+Let's now install `Jupyter Lab` in the `venv`:
+1. Run `pip install jupyterlab` to Install Jupyter Lab (see <a href="https://jupyter.org/install" target="_blank">Installing Jupyter </a> documentation)
+2. Run `pip list` and notice that many packages have been installed that Jupyter Lab uses.
+3. Run `jupyter lab`. This should ultimately invite you to open a `http://localhost:8888/lab` link in your browser.
+4. Drag and drop the [solar-panel-readings.csv](./files/solar-panel-readings.csv) and that `certificate.pem` e.g. `iot-yourgeomas-xyz-com-chain.pem` you just downloaded from your local folder to the Jupyter Lab window on your browser.
+5. Similarly, drag and drop the [cl-energy-loss-simulated-local.ipynb](./files/cl-energy-loss-simulated-local.ipynb) you just downloaded. Open it - you are ready to go !
 
 <a id='cp4d'> </a>
-## Create Project in Cloud Pak For Data & import certificate, Notebook and csv
+### OPTION B - using Cloud Pak for Data
+Download this Notebook locally [cl-energy-loss-simulated-cp4d.ipynb](./files/cl-energy-loss-simulated-cp4d.ipynb).
+
 Following the blue arrows in the below picture, do:
 1. In CP4D, go to `Projects`-`All Projects` menu and click `New project`. Name it `xy-energy-loss-simulated`, click `Create`.
 2. From the Project `Assets` tab, click `New Asset`, select `Jupyter notebook editor`. Go to the `From file` tab and drag and drop the `cl-energy-loss-simulated.ipynb` you just downloaded, select `Runtime 22.2 on Python 3.10 (1vCPU, 2 GB RAM)` option. Click `Create`. This should open the Notebook.
-3. Click the data waffle (top-right) and drag and drop both the [solar-panel-readings.csv](./files/solar-panel-readings.csv) and that `certificate.pem` e.g. `iot-yourgeomas-xyz-com.pem` you just downloaded.
-
+3. Click the data waffle (top-right) and drag and drop both the [solar-panel-readings.csv](./files/solar-panel-readings.csv) and that `certificate.pem` e.g. `iot-yourgeomas-xyz-com-chain.pem` you just downloaded.
 
 ![image](/images/Simulated-002.jpg)
+
 
 <a id='notebook'> </a>
 # Understand & run the Notebook
 
 <a id='notebookexplained'> </a>
 ## Notebook Explained    
-The [cl-energy-loss-simulated.ipynb](./files/cl-energy-loss-simulated.ipynb) Notebook provides all instructions to complete this recipe. Using the Notebook, you will:
+Both the [cl-energy-loss-simulated-local.ipynb](./files/cl-energy-loss-simulated.ipynb) and [cl-energy-loss-simulated-cp4d.ipynb](./files/cl-energy-loss-simulated-cp4d.ipynb) Notebooks provide all instructions to complete this recipe. Using the Notebook, you will:
 1. Transform the csv into a pandas data frame and visualize it with an interactive Bokeh plot
 2. Have 2 options to send the 5,720 rows of data to Monitor:
     - **Option A**: send data real-time at your chosen frequency (e.g. 1 reading every second, minute, 10 minutes etc)
@@ -84,4 +110,4 @@ The [cl-energy-loss-simulated.ipynb](./files/cl-energy-loss-simulated.ipynb) Not
 ![image](/images/Simulated-003.jpg)
 <a id='notebookgo'> </a>
 ## Notebook - GO !  
-Open the `cl-energy-loss-simulated.ipynb` notebook in the CP4D Project, click the pencil `Edit` button and run the cells one by one.
+Open the [cl-energy-loss-simulated-local.ipynb](./files/cl-energy-loss-simulated.ipynb) (OPTIONN A) or [cl-energy-loss-simulated-cp4d.ipynb](./files/cl-energy-loss-simulated-cp4d.ipynb) (OPTION B) notebook, and simply run the cells one by one.
