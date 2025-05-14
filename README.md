@@ -1,7 +1,7 @@
 # From Drone to Fix - Solar Farm Inspection using IBM Maximo & Watsonx
 **Last Updated:** 12 May 2025 **Authors:**  <a href="https://www.linkedin.com/in/christophe-lucas-a5abab28/" target="_blank">Christophe Lucas</a> & <a href="https://www.linkedin.com/in/jamesppetrie/" target="_blank">James Petrie </a><br>
 **Disclaimer:** This code is delivered as-is and is NOT formal IBM documentation in any way.<br><br>
-**IMPORTANT NOTE:** This repository is still work-in-progress. This main page & the `Energy Loss` story recipes are complete. The `Visual Inspection` & `GenAI + Q&A` recipes are still to be written. 
+**NOTE:** This repository is still work-in-progress. This main page & the `Energy Loss` story recipes are complete. The `Visual Inspection` & `GenAI + Q&A` recipes are still to be written. 
 
 # Table of Contents
 - [**Introduction**](#intro)
@@ -84,7 +84,7 @@ Based on the real condition of every asset of the solar farm and other info like
 <a href="https://www.ibm.com/docs/en/mas-cd/maximo-vi/continuous-delivery?topic=integrating-maximo-visual-inspection-edge" target="_blank">MVI Edge</a>), 
 <a href="https://www.ibm.com/products/maximo/predictive-maintenance" target="_blank">Maximo Health & Predict</a>
 
-**Links to Recipe**: The `Visual Inspection` recipe has not been written yet - stay tuned (we hope to write it before end 2024)!
+**Links to Recipe**: The `Visual Inspection` recipe has not been written yet - stay tuned ...!
 
 ![image](/images/DroneToFix-003.jpg)
 
@@ -98,7 +98,7 @@ Similarly, we use a call to a watsonx.ai Large language model to [4] generate a 
 <a href="https://www.ibm.com/products/watsonx-assistant" target="_blank">Watsonx Assistant</a> and
 <a href="https://www.ibm.com/products/watson-discovery" target="_blank">Watson Discovery</a>.
 
-**Links to Recipe**: The `GenAI + Q&A` recipe has not been written yet - stay tuned (we hope to write it early 2025)!
+**Links to Recipe**: The `GenAI + Q&A` recipe has not been written yet - stay tuned ...
 
 ![image](/images/DroneToFix-004.jpg)
 
