@@ -30,7 +30,7 @@ In this recipe, you will:
 
 Once you will have run this recipe end-to-end and mastered it, you should be able to easily update it (to e.g. change the name or number of columns or rows of the csv file, change the name of the Monitor devices etc) - so to be able to send *any* timeseries csv data to Monitor.
 
-**Products Used**: <a href="https://www.ibm.com/docs/en/maximo-monitor/continuous-delivery" target="_blank">IBM Maximo Monitor</a> version `8.11.11` & <a href="https://www.ibm.com/products/cloud-pak-for-data" target="_blank">IBM Cloud Pak for Data</a> `4.6`, part of the <a href="https://www.ibm.com/products/maximo" target="_blank">IBM Maximo Application Suite</a> `8.11.15`.
+**Products Used**: <a href="https://www.ibm.com/docs/en/maximo-monitor/continuous-delivery" target="_blank">IBM Maximo Monitor</a> version `8.11.11` & <a href="https://www.ibm.com/products/cloud-pak-for-data" target="_blank">IBM Cloud Pak for Data</a> `4.6` (or local Jupyter Lab env), part of the <a href="https://www.ibm.com/products/maximo" target="_blank">IBM Maximo Application Suite</a> `8.11.15`.
 
 **Expected Duration**: 45 minutes.<br>
 
