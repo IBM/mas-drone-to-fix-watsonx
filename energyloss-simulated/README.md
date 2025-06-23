@@ -1,7 +1,7 @@
 # Send csv data to IBM Maximo Monitor with IoT Platform SDK
 ## [From Drone to Fix - Solar Farm Inspection - Energy Loss Story (Simulated)]
 
-**Last Updated:** 12 May 2025 **Authors:** <a href="https://www.linkedin.com/in/christophe-lucas-a5abab28/" target="_blank">Christophe Lucas</a> & <a href="https://www.linkedin.com/in/jamesppetrie/" target="_blank">James Petrie</a><br>
+**Last Updated:** 18 June 2025 **Authors:** <a href="https://www.linkedin.com/in/christophe-lucas-a5abab28/" target="_blank">Christophe Lucas</a> & <a href="https://www.linkedin.com/in/jamesppetrie/" target="_blank">James Petrie</a><br>
 **Disclaimer:** This code is delivered as-is and is NOT formal IBM documentation in any way.
 
 # Table of Contents
